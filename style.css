@@ -111,7 +111,7 @@ main p {
 
 }
 
-p::first-letter {
+main p:first-of-type::first-letter {
   color: black;
   float: left;
   line-height: 85%;
@@ -145,37 +145,48 @@ span.tooltip {
   color: var(--danger-color);
   position: relative;
   cursor: pointer;
+  display: inline;
+  
 }
 /* underline span on hover/focus */
 span.tooltip:hover,
 span.tooltip:focus {
  text-decoration: underline;
-
+ 
  }
 /* show tooltip on hover/focus */
 span.tooltip:hover > span,
 span.tooltip:focus > span {
- display: inline-block;
+ display: inline;
  text-align: center;
  width: 120px;
  bottom: 100%;
  left: 50%;
  margin-left: -60px:
+ visibility: none;
+ position: absolute;
  background-color: black;
+ 
 }
 
 
 /* styling for tooltip bubble */
 span.tooltip span::after {
-  content: "";
- display: inline-block;
+ content: "";
+ visibility: none;
+ background-color: black;
  text-align: center;
  width: 120px;
  bottom: 100%;
  left: 50%;
  margin-left: -60px:
  background-color: black;
- 
 }
  
+/* styling for tooltip bubble arrow */
+span.tooltip span::after {
+  content: "";
+ visibility: hidden;
+
+}
 
